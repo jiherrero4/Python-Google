@@ -20,6 +20,12 @@ wks = gc.open("prueba1")
 
 worksheet = wks.worksheet("gestionados")
 
-val = worksheet.acell('B1').value
+cliente = worksheet.find("GESTAMP")
+servicio = worksheet.find("S. Gestionado")
 
-print(val)
+column = cliente.col
+row = servicio.row
+
+valorBuscado = worksheet.cell(row, column).value
+
+print(valorBuscado)
